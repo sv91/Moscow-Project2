@@ -6,19 +6,21 @@ clearvars;
 %    and uncompressed it in the same folder as this file resides.
 
 % Load features and labels of training data
-load train/train.mat;
+load train.y.mat;
+load train.X_cnn.mat;
+load train.X_hog.mat;
 
 %% --browse through the images and look at labels
 for i=1:10
     clf();
 
     % load img
-    img = imread( sprintf('train/imgs/train%05d.jpg', i) );
+    img = imread( sprintf('Data/train/imgs/train%05d.jpg', i) );
 
     % show img
     imshow(img);
 
-    title(sprintf('Label %d', train.y(i)));
+    title(sprintf('Label %d', y(i)));
 
     pause;  % wait for key, 
 end
@@ -30,19 +32,16 @@ Tr = [];
 Te = [];
 
 % NOTE: you should do this randomly! and k-fold!
-Tr.idxs = 1:2:size(train.X_hog,1);
-Tr.X = train.X_hog(Tr.idxs,:);
-Tr.y = train.y(Tr.idxs);
+Tr.idxs = 1:2:size(X_hog,1);
+Tr.X = X_hog(Tr.idxs,:);
+Tr.y = y(Tr.idxs);
 
-Te.idxs = 2:2:size(train.X_hog,1);
-Te.X = train.X_hog(Te.idxs,:);
-Te.y = train.y(Te.idxs);
+Te.idxs = 2:2:size(X_hog,1);
+Te.X = X_hog(Te.idxs,:);
+Te.y = y(Te.idxs);
 
 %%
 fprintf('Training simple neural network..\n');
-
-addpath(genpath('where/the/deeplearningtoolboxis/'));
-
 
 rng(8339);  % fix seed, this    NN may be very sensitive to initialization
 
@@ -109,7 +108,7 @@ for i=20:30  % just 10 of them, though there are thousands
 
 
     % show if it is classified as pos or neg, and true label
-    title(sprintf('Label: %d, Pred: %d', train.y(Te.idxs(i)), classVote(i)));
+    title(sprintf('Label: %d, Pred: %d', y(Te.idxs(i)), classVote(i)));
 
     pause;  % wait for keydo that then, 
 end
