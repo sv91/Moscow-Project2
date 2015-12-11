@@ -1,14 +1,5 @@
-clearvars;
+initWorkSpace;
 
-% -- GETTING STARTED WITH THE IMAGE CLASSIFICATION DATASET -- %
-% IMPORTANT:
-%    Make sure you downloaded the file train.tar.gz provided to you
-%    and uncompressed it in the same folder as this file resides.
-
-% Load features and labels of training data
-load train.y.mat;
-load train.X_cnn.mat;
-load train.X_hog.mat;
 
 %% --browse through the images and look at labels
 for i=1:10
@@ -93,7 +84,8 @@ nnPred = nn.a{end};
 
 % get overall error [NOTE!! this is not the BER, you have to write the code
 %                    to compute the BER!]
-predErr = sum( classVote ~= Te.y ) / length(Te.y);
+%predErr = sum( classVote ~= Te.y ) / length(Te.y);
+predErr = BER(4, Te.y, classVote);
 
 fprintf('\nTesting error: %.2f%%\n\n', predErr * 100 );
 
@@ -103,7 +95,7 @@ figure;
 for i=20:30  % just 10 of them, though there are thousands
     clf();
 
-    img = imread( sprintf('train/imgs/train%05d.jpg', Te.idxs(i)) );
+    img = imread( sprintf('Data/train/imgs/train%05d.jpg', Te.idxs(i)) );
     imshow(img);
 
 
