@@ -20,9 +20,9 @@ for i=1:10
     % show img
     imshow(img);
 
-    title(sprintf('Label %d', y(i)));
+    title(strcat('Label: ', labelName(y(i))));
 
-    pause;  % wait for key, 
+    pause;  % wait for key,??
 end
 
 %% -- Example: split half and half into train/test, use HOG features
@@ -108,7 +108,7 @@ for i=20:30  % just 10 of them, though there are thousands
 
 
     % show if it is classified as pos or neg, and true label
-    title(sprintf('Label: %d, Pred: %d', y(Te.idxs(i)), classVote(i)));
+    title(strcat('Label: ', labelName(y(Te.idxs(i))),', Pred: ', labelName(classVote(i))));
 
-    pause;  % wait for keydo that then, 
+    pause;  % wait for keydo that then,??
 end
