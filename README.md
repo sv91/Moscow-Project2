@@ -4,7 +4,7 @@ Git repository for the second project of the "Patern Classification and Machine 
 
 # TODO-List
 - [ ] Preliminaries
-	- [ ] Code for getting 2-class dataset 
+	- [x] Code for getting 2-class dataset 
 	
 - [ ] Baseline Classification: Logistic Regression
 	- [ ] Basic logRegression for binary classification
