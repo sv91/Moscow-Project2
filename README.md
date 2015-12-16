@@ -7,7 +7,8 @@ Git repository for the second project of the "Patern Classification and Machine 
 	- [x] Code for getting 2-class dataset 
 	
 - [ ] Baseline Classification: Logistic Regression
-	- [ ] Basic logRegression for binary classification
+	- [x] Basic logRegression for binary classification
+	- [ ] Multinomial logistic regression (using mnrfit)
 	- [ ] Multi-class classification implementation: https://en.wikipedia.org/wiki/Multiclass_classification
 		- [ ] OvR
 		- [ ] OvO
@@ -19,7 +20,7 @@ Git repository for the second project of the "Patern Classification and Machine 
 	- [ ] Overfeat: see what kind of processing we can apply 
 
 - [ ] Model validation implementation
-	- [ ] Implement 10-fold Cross-Validation (and test it on baseline)
+	- [x] Implement 10-fold Cross-Validation (and test it on baseline)
 	- [ ] Bias-Variance tradeoff computation ? (need to estimation over/under fit)
 
 - [ ] Models: for each get the cross-validation, and run: binary classification, multi-class classification, reduce multiclass to binary
