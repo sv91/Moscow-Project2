@@ -26,7 +26,7 @@ Git repository for the second project of the "Patern Classification and Machine 
 - [ ] Models: for each get the cross-validation, and run: binary classification, multi-class classification, reduce multiclass to binary
 	- [ ] Optimized logRegression (penalized variant ?)
 	- [ ] SVM Implementation (linear + gaussian kernel), do not use SMO
-	- [ ] kNN or K-mean Implementation (maybe not? doesnt seem appropriate) ?
+	- [x] kNN or K-mean Implementation (maybe not? doesnt seem appropriate) ?
 	- [ ] Stochastic gradient descent + momentum using mini-batch ?
 
 
