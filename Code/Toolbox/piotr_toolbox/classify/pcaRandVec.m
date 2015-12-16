@@ -75,7 +75,7 @@ if(show && (nd==2 || nd==3)); figure(show); montage2(Xr); end
 %%% Little test - see if eigenvectors induced by randomly generated vectors
 %%% are the same as the original eigenvectors.  Assumes [U,mu,vars] exist.
 %   Xr = pcaRandVec( U, mu, vars, 3, 100 );
-%   [ Ur, mur, varsr ] = pca( Xr );
+%   [ Ur, mur, varsr ] = pca_piotr( Xr );
 %   ind = 3;
 %   Uim = reshape( U(:,ind), [ size(mu,1), size(mu,2) ]  );
 %   Uimr = reshape( Ur(:,ind), [ size(mu,1), size(mu,2) ]  );

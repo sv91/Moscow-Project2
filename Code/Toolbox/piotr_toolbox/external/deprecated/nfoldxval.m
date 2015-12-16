@@ -137,7 +137,7 @@ for testind = 1:nsets
 
   % apply dim reduction [make sure data is well conditioned]
   if( 0 )
-    [ U, mu ] = pca( train' );
+    [ U, mu ] = pca_piotr( train' );
     maxp = size(U,2) -6; % -20; further reduce? -6
     if( maxp < p )
       warning(['reducing dim of data from: ' ...

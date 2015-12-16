@@ -1,4 +1,4 @@
-function [U,mu,vars] = pca( X )
+function [U,mu,vars] = pca_piotr( X )
 % Principal components analysis (alternative to princomp).
 %
 % A simple linear dimensionality reduction technique. Use to create an
@@ -24,7 +24,7 @@ function [U,mu,vars] = pca( X )
 %  residuals = cumsum(vars/sum(vars)); plot(residuals,'-.')
 %
 % USAGE
-%  [U,mu,vars] = pca( X )
+%  [U,mu,vars] = pca_piotr( X )
 %
 % INPUTS
 %  X         - [d1 x ... x dm x n], treated as n [d1 x ... x dm] elements
@@ -36,7 +36,7 @@ function [U,mu,vars] = pca( X )
 %
 % EXAMPLE
 %  load pcaData;
-%  [U,mu,vars] = pca( I3D1(:,:,1:12) );
+%  [U,mu,vars] = pca_piotr( I3D1(:,:,1:12) );
 %  [Y,Xhat,avsq] = pcaApply( I3D1(:,:,1), U, mu, 5 );
 %  pcaVisualize( U, mu, vars, I3D1, 13, [0:12], [], 1 );
 %  Xr = pcaRandVec( U, mu, vars, 1, 25, 0, 3 );
@@ -56,7 +56,8 @@ X = bsxfun(@minus,X,mu)/sqrt(n-1);
 X = reshape( X, d, n );
 
 % make sure X not too large or SVD slow O(min(d,n)^2.5)
-m=2500; if( min(d,n)>m ), X=X(:,randperm(n,m)); n=m; end
+m=10000; if( min(d,n)>m ), X=X(:,randperm(n,m)); n=m; end
+%m=2500 BEFORE
 
 % get principal components using the SVD of X: X=U*S*V'
 if( 0 )

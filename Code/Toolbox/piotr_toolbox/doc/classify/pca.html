@@ -20,7 +20,7 @@
 <div class="box"><strong>Principal components analysis (alternative to princomp).</strong></div>
 
 <h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
-<div class="box"><strong>function [U,mu,vars] = pca( X ) </strong></div>
+<div class="box"><strong>function [U,mu,vars] = pca_piotr( X ) </strong></div>
 
 <h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
 <div class="fragment"><pre class="comment"> Principal components analysis (alternative to princomp).
@@ -48,7 +48,7 @@
   residuals = cumsum(vars/sum(vars)); plot(residuals,'-.')
 
  USAGE
-  [U,mu,vars] = pca( X )
+  [U,mu,vars] = pca_piotr( X )
 
  INPUTS
   X         - [d1 x ... x dm x n], treated as n [d1 x ... x dm] elements
@@ -60,7 +60,7 @@
 
  EXAMPLE
   load pcaData;
-  [U,mu,vars] = pca( I3D1(:,:,1:12) );
+  [U,mu,vars] = pca_piotr( I3D1(:,:,1:12) );
   [Y,Xhat,avsq] = pcaApply( I3D1(:,:,1), U, mu, 5 );
   pcaVisualize( U, mu, vars, I3D1, 13, [0:12], [], 1 );
   Xr = pcaRandVec( U, mu, vars, 1, 25, 0, 3 );

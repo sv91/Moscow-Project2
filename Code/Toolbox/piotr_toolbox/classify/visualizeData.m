@@ -36,7 +36,7 @@ if( nargin<5 || isempty(C) ); C=[]; end
 
 % apply PCA if necessary
 if( size(X,2)~= k )
-  [ U, mu ] = pca( X' );
+  [ U, mu ] = pca_piotr( X' );
   X = pcaApply( X', U, mu, k )';
   if(~isempty(C)); C = pcaApply( C', U, mu, k )'; end
 end

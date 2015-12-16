@@ -1,7 +1,7 @@
 % Companion function to pca.
 %
 % Use pca to retrieve the principal components U and the mean mu from a
-% set fo vectors X1 via [U,mu,vars] = pca(X1).  Then given a new
+% set fo vectors X1 via [U,mu,vars] = pca_piotr(X1).  Then given a new
 % vector x, use y = pca_apply( x, U, mu, vars, k ) to get the first k
 % coefficients of x in the space spanned by the columns of U. See pca for
 % general information.
