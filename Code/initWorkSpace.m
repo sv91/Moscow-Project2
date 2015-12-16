@@ -10,10 +10,7 @@ load Data/train/train.X_cnn.mat;
 load Data/train/train.X_hog.mat;
 
 % get binary classification
-y_bin = y;
-y_bin(y_bin==4) = 0;
-y_bin(y_bin==2) = 1;
-y_bin(y_bin==3) = 1;
+y_bin = toBin( y, 4, 0 );
 
 % constants
 X_N = 6000;
