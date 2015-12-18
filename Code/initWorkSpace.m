@@ -3,6 +3,7 @@ clear all;
 % add toolboxes to path
 addpath(genpath('Code/Toolbox/piotr_toolbox/'));
 addpath(genpath('Code/Toolbox/DeepLearnToolbox-master/'));
+addpath(genpath('Code/Toolbox/drtoolbox/'));
 
 % load dataset and convert to double precision
 load Data/train/train.y.mat;
