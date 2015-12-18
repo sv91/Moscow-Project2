@@ -1,8 +1,8 @@
 initWorkSpace;
 
-% L2 normalization
-X_hog_l2norm = norm(X_hog);
-X_hog_l2normalized = X_hog / X_hog_l2norm;
+% L2 normalization for each variable
+X_hog_l2norms = sqrt(sum(X_hog .^2));
+X_hog_l2normalized = bsxfun(@rdivide, X_hog, X_hog_l2norms);
 
 % center and standardize values for PCA
 X_hog_mean = mean(X_hog_l2normalized);
@@ -29,15 +29,16 @@ X_hog_pca = X_hog_stdized * selected_coeffs_hog;
 % whiten and L2-normalize again
 [X_hog_whitened, ~, ~, X_hog_w_mat] = mat_whitening(X_hog_pca);
 %Xwh = X*whMat;
-X_hog_l2norm2 = norm(X_hog_whitened);
-X_hog_l2normalized2 = X_hog_whitened / X_hog_l2norm2;
+% L2 normalization for each variable
+X_hog_l2norms2 = sqrt(sum(X_hog_whitened .^2));
+X_hog_l2normalized2 = bsxfun(@rdivide, X_hog_whitened, X_hog_l2norms2);
 
 % save the processed features in file
 X_hog_p = X_hog_l2normalized2;
 save('Data/train/train.X_hog_p.mat', 'X_hog_p');
 
 
-% 
+% CONCVERTED TO DOUBLE
 %coeff = pca(X) returns the principal component coefficients, also known as loadings, for the n-by-p data matrix X. Rows of X correspond to observations and columns correspond to variables. The coefficient matrix is p-by-p. Each column of coeff contains coefficients for one principal component, and the columns are in descending order of component variance. By default, pca centers the data and uses the singular value decomposition (SVD) algorithm.
 %Principal component scores are the representations of X in the principal component space. Rows of score correspond to observations, and columns correspond to components.
 
