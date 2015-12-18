@@ -4,10 +4,13 @@ clear all;
 addpath(genpath('Code/Toolbox/piotr_toolbox/'));
 addpath(genpath('Code/Toolbox/DeepLearnToolbox-master/'));
 
-% load dataset
+% load dataset and convert to double precision
 load Data/train/train.y.mat;
-load Data/train/train.X_cnn.mat;
-load Data/train/train.X_hog.mat;
+load Data/train/train.X_hog_p.mat; % processed features
+load Data/train/train.X_cnn.mat; % original features
+load Data/train/train.X_hog.mat; 
+X_cnn = double(X_cnn);
+X_hog = double(X_hog);
 
 % get binary classification
 y_bin = y;
@@ -24,3 +27,5 @@ kfold_nb = 10;
 % k-fold partition
 rng(3493752176); % get deterministic result
 kfold = cvpartition(X_N, 'KFold', kfold_nb);
+
+fprintf('Init done...\n');
