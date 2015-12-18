@@ -4,8 +4,8 @@ ber_te_logRegBaseline_hog = [];
 ber_tr_logRegBaseline_hog = [];
 
 for i = 1:kfold_nb
-    X_train = X_hog(find(training(kfold, i)), :);
-    X_test = X_hog(find(test(kfold, i)), :);
+    X_train = X_hog_p(find(training(kfold, i)), :);
+    X_test = X_hog_p(find(test(kfold, i)), :);
     y_train = y_bin(find(training(kfold, i)), :);
     y_test = y_bin(find(test(kfold, i)), :);
     
