@@ -15,7 +15,7 @@ Git repository for the second project of the "Patern Classification and Machine 
 	- [ ] Reduce multiclass to binary classification 
 
 - [ ] Feature Processing (test and validate with baseline)
-	- [ ] HOG: see if we can reduce the # of features (dim. reduction or removing)
+	- [x] HOG: see if we can reduce the # of features (dim. reduction or removing)
 	- [ ] Overfeat: understand better the features
 	- [ ] Overfeat: see what kind of processing we can apply 
 
