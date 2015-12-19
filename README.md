@@ -3,30 +3,41 @@
 Git repository for the second project of the "Patern Classification and Machine Learning" class for the group "Moscow". 
 
 # TODO-List
-- [ ] Preliminaries
+- [x] Preliminaries
 	- [x] Code for getting 2-class dataset 
 	
 - [ ] Baseline Classification: Logistic Regression
 	- [x] Basic logRegression for binary classification
 	- [ ] Multinomial logistic regression (using mnrfit)
-	- [ ] Multi-class classification implementation: https://en.wikipedia.org/wiki/Multiclass_classification
-		- [ ] OvR
-		- [ ] OvO
-	- [ ] Reduce multiclass to binary classification 
+	- [ ] Multi-class classification implementation: One vs Rest
 
 - [ ] Feature Processing (test and validate with baseline)
 	- [x] HOG: see if we can reduce the # of features (dim. reduction or removing)
 	- [ ] Overfeat: understand better the features
-	- [ ] Overfeat: see what kind of processing we can apply 
+	- [ ] Overfeat: get kmeans & pca versions
+	- [ ] Combine HOG+CNN features, shuffle and PCA that
 
-- [ ] Model validation implementation
-	- [x] Implement 10-fold Cross-Validation (and test it on baseline)
-	- [ ] Bias-Variance tradeoff computation ? (need to estimation over/under fit)
+- [x] Model validation: implement 10-fold Cross-Validation (and test it on baseline)
 
-- [ ] Models: for each get the cross-validation, and run: binary classification, multi-class classification, reduce multiclass to binary
-	- [ ] Optimized logRegression (penalized variant ?)
-	- [ ] SVM Implementation (linear + gaussian kernel), do not use SMO
-	- [x] kNN or K-mean Implementation (maybe not? doesnt seem appropriate) ?
-	- [ ] Stochastic gradient descent + momentum using mini-batch ?
+
+# Summary & results of the experiences
+
+| Method        			| Tr err | Tr var | Te err | Te var | 
+|:--------------------------------------|:------:|:------:|:------:|:------:|
+
+| Bin Baseline Logistic Regression	| x      | x      | x      | x      |
+| Bin SVM Linear Kernel 		| x      | x      | x      | x      |
+| Bin SVM Gaussian Kernel 		| x      | x      | x      | x      |
+| Bin kNN or kmeans 			| x      | x      | x      | x      |
+
+| Mult Multinomial Log. Regression 	| x      | x      | x      | x      |
+| Mult SVM Linear Kernel 		| x      | x      | x      | x      |
+| Mult SVM Gaussian Kernel 		| x      | x      | x      | x      |
+| Mult kNN or kmeans 			| x      | x      | x      | x      |
+
+| RedMult Multinomial Log. Regression	| x      | x      | x      | x      |
+| RedMult SVM Linear Kernel 		| x      | x      | x      | x      |
+| RedMult SVM Gaussian Kernel 		| x      | x      | x      | x      |
+| RedMult kNN or kmeans 		| x      | x      | x      | x      |
 
 
