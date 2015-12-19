@@ -1,7 +1,7 @@
-function [mappedX, mapping] = pca(X, no_dims)
+function [mappedX, mapping] = pca_dr(X, no_dims)
 %PCA Perform the PCA algorithm
 %
-%   [mappedX, mapping] = pca(X, no_dims)
+%   [mappedX, mapping] = pca_dr(X, no_dims)
 %
 % The function runs PCA on a set of datapoints X. The variable
 % no_dims sets the number of dimensions of the feature points in the 

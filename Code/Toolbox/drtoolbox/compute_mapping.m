@@ -375,7 +375,7 @@ function [mappedA, mapping] = compute_mapping(A, type, no_dims, varargin)
             
         case {'PCA', 'KLM'}
             % Compute PCA mapping
-			[mappedA, mapping] = pca(A, no_dims);
+			[mappedA, mapping] = pca_dr(A, no_dims);
             mapping.name = 'PCA';
             
         case {'SPCA', 'SimplePCA'}
