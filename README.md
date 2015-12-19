@@ -24,17 +24,17 @@ Git repository for the second project of the "Patern Classification and Machine 
 
 | Method        			| Tr err | Tr var | Te err | Te var | 
 |:--------------------------------------|:------:|:------:|:------:|:------:|
-
+| 					|        |        |        |        |
 | Bin Baseline Logistic Regression	| x      | x      | x      | x      |
 | Bin SVM Linear Kernel 		| x      | x      | x      | x      |
 | Bin SVM Gaussian Kernel 		| x      | x      | x      | x      |
 | Bin kNN or kmeans 			| x      | x      | x      | x      |
-
+| 					|        |        |        |        |
 | Mult Multinomial Log. Regression 	| x      | x      | x      | x      |
 | Mult SVM Linear Kernel 		| x      | x      | x      | x      |
 | Mult SVM Gaussian Kernel 		| x      | x      | x      | x      |
 | Mult kNN or kmeans 			| x      | x      | x      | x      |
-
+| 					|        |        |        |        |
 | RedMult Multinomial Log. Regression	| x      | x      | x      | x      |
 | RedMult SVM Linear Kernel 		| x      | x      | x      | x      |
 | RedMult SVM Gaussian Kernel 		| x      | x      | x      | x      |
