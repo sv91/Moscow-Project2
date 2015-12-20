@@ -1,3 +1,4 @@
+initWorkSpace;
 
 ber_te_logRegBaseline_cnn = [];
 ber_tr_logRegBaseline_cnn = [];

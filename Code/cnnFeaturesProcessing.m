@@ -1,4 +1,6 @@
-load('Data/X_cnn_small.mat')
+initWorkSpace;
+
+X = reduceCNN(X_cnn,20);
 
 % L2 normalization
 X_cnn_l2norm = norm(X);

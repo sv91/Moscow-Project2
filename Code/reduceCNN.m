@@ -10,8 +10,7 @@ function X_reduced = reduceCNN(X,k)
 %                   * 6: k-means with CNN deteministic
 % k:    argument k for kNN or k-means
 
-[N,D] = size(X)
-tempX = X;
+[N,D] = size(X);
 
 % If not 0, we set to 1.
 % for i = 1:N

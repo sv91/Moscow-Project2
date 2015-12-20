@@ -8,6 +8,7 @@ addpath(genpath('Code/Toolbox/drtoolbox/'));
 % load dataset and convert to double precision
 load Data/train/train.y.mat;
 load Data/train/train.X_hog_p.mat; % processed features
+load Data/train/train.X_cnn_p.mat; % processed features batch=200,k=20
 load Data/train/train.X_cnn.mat; % original features
 load Data/train/train.X_hog.mat; 
 X_cnn = double(X_cnn);
