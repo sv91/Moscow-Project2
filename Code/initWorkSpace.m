@@ -1,5 +1,12 @@
 clear all;
 
+% refs for toolbox
+%https://lvdmaaten.github.io/drtoolbox/
+%http://dmlab8.csie.ntust.edu.tw/#kstattoolbox.html KPCA
+
+% get deterministic result
+rng(3493752176); 
+
 % add toolboxes to path
 addpath(genpath('Code/Toolbox/piotr_toolbox/'));
 addpath(genpath('Code/Toolbox/DeepLearnToolbox-master/'));
@@ -24,7 +31,6 @@ X_D_cnn = 36865;
 kfold_nb = 10;
 
 % k-fold partition
-rng(3493752176); % get deterministic result
 kfold = cvpartition(X_N, 'KFold', kfold_nb);
 
 fprintf('Init done...\n');
